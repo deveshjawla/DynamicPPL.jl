@@ -145,7 +145,7 @@ function initialize_parameters!!(
     end
     theta = vi[spl]
     length(theta) == length(init_theta) ||
-        error("Provided initial value doesn't match the dimension of the model")
+        error("Provided initial value doesn't match the dimension of the model, if using MCMCDistributed(), pass init_params as a list of length n_chains"")
 
     # Update values that are provided.
     for i in 1:length(init_theta)
